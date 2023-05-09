@@ -54,6 +54,7 @@
 /* Plates container */
 
 .plates-container {
+  margin-top: 3vh;
   width: 70%;
   display: flex;
   flex-wrap: wrap;
@@ -66,9 +67,7 @@
   border: 1px solid #e7e7e7;
   border-bottom: none;
   margin-left: 10px;
-}
-
-.plate-image-container {
+  position: relative;
 }
 
 .plate-image {
@@ -83,11 +82,12 @@
 }
 
 .plate-title {
-  font-size: 2vh;
+  font-size: 2.5vh;
   font-weight: 300;
 }
 
 .plate-description {
+  margin-top: -1vh;
   font-size: 1.4vh;
 }
 
@@ -100,10 +100,16 @@
 .cousine-flag {
   margin-left: 5px;
   width: 3vh;
+  position: absolute;
+  right: 5px;
+  bottom: 0;
 }
 
 .plate-price {
+  position: absolute;
   font-size: 2vh;
+  margin: 0;
+  bottom: 0;
 }
 
 /* Deals container */

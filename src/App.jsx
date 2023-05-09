@@ -10,8 +10,6 @@ function App() {
   const [categories, setCategories] = useState([])
   const [selectedCategory, setSelectedCategory] = useState(null)
 
-  console.log({ restaurantData })
-
   const updateCategories = () => {
     setCategories(restaurantData.categories)
   }
