@@ -22,25 +22,93 @@
 }
 
 .navbar-categories-container {
-  margin-top: 5vh;
   width: fit-content;
+  display: flex;
 }
 
-.navbar-categorie-content {
+.navbar-category-content {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #cccccc;
 }
 
-.navbar-categorie {
+.navbar-category {
   font-size: 2vh;
   font-weight: 100;
   margin-right: 5px;
   transition: transform .3s;
+  margin-right: 3vh;
 }
 
-.navbar-categorie:hover {
+.navbar-category:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.03);
   color: #2bbbad;
+}
+
+/* All plates container */
+
+.all-plates-container {
+  display: flex;
+}
+
+/* Plates container */
+
+.plates-container {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Plate card */
+
+.plate-card {
+  width: 31vh;
+  border: 1px solid #e7e7e7;
+  border-bottom: none;
+  margin-left: 10px;
+}
+
+.plate-image-container {
+}
+
+.plate-image {
+  width: 100%;
+}
+
+.plate-info-container {
+  margin-top: -2vh;
+  background-color: #e7e7e7;
+  padding: 0px 5px;
+  height: 21vh;
+}
+
+.plate-title {
+  font-size: 2vh;
+  font-weight: 300;
+}
+
+.plate-description {
+  font-size: 1.4vh;
+}
+
+.plate-cousine {
+  display: flex;
+  align-items: center;
+  font-size: 1.7vh;
+}
+
+.cousine-flag {
+  margin-left: 5px;
+  width: 3vh;
+}
+
+.plate-price {
+  font-size: 2vh;
+}
+
+/* Deals container */
+
+.deals-container {
+  width: 25%;
+  background-color: #edad19;
 }

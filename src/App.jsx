@@ -3,9 +3,14 @@ import { RestaurantContext } from "./components/context/RestaurantContext"
 import { useState } from "react"
 import restaurantData from "../restaurant-data.json"
 import _ from "lodash"
+import PlatesContainer from "./components/PlatesContainer"
+import PromotionsContainer from "./components/PromotionsContainer"
 
 function App() {
   const [categories, setCategories] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState(null)
+
+  console.log({ restaurantData })
 
   const updateCategories = () => {
     setCategories(restaurantData.categories)
@@ -13,6 +18,8 @@ function App() {
 
   const state = {
     categories,
+    selectedCategory,
+    setSelectedCategory,
   }
 
   if (categories && _.isEmpty(categories)) {
@@ -22,6 +29,10 @@ function App() {
   return (
     <RestaurantContext.Provider value={state}>
       <Navbar />
+      <div className="all-plates-container">
+        <PlatesContainer />
+        <PromotionsContainer />
+      </div>
     </RestaurantContext.Provider>
   )
 }

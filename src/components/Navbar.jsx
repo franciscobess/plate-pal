@@ -3,7 +3,14 @@ import Logo from '../assets/logo.jpg'
 import { RestaurantContext } from './context/RestaurantContext'
 
 const Navbar = () => {
-    const { categories } = useContext(RestaurantContext)
+    const { categories, selectedCategory, setSelectedCategory } = useContext(RestaurantContext)
+
+    const selectCategory = (event) => {
+        const categoryName = event.target.innerText
+        if (selectedCategory === null || categoryName !== selectedCategory) {
+            setSelectedCategory(categoryName)
+        }
+    }
 
     return (
         <div className='navbar'>
@@ -13,9 +20,9 @@ const Navbar = () => {
             </div>
 
             <div className='navbar-categories-container'>
-                {categories.map((categorie) => (
-                    <div key={categorie.id} className='navbar-categorie-content'>
-                        <h2 className="navbar-categorie">{categorie.name}</h2>
+                {categories.map((category) => (
+                    <div key={category.id} className='navbar-category-content'>
+                        <h2 className="navbar-category" onClick={selectCategory}>{category.name}</h2>
                     </div>
                 ))}
             </div>
