@@ -6,10 +6,41 @@
 
 /* Navbar */
 
-.navbar {
+.navbar-logo-title-container {
   display: flex;
+  height: 10vh;
 }
 
 .navbar-restaurant-logo {
-  width: 50px;
+  position: static;
+}
+
+.navbar-title {
+  font-size: 3vh;
+  margin-left: 2vh;
+  font-weight: 300;
+}
+
+.navbar-categories-container {
+  margin-top: 5vh;
+  width: fit-content;
+}
+
+.navbar-categorie-content {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+}
+
+.navbar-categorie {
+  font-size: 2vh;
+  font-weight: 100;
+  margin-right: 5px;
+  transition: transform .3s;
+}
+
+.navbar-categorie:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: #2bbbad;
 }
