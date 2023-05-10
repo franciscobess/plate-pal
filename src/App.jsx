@@ -8,7 +8,7 @@ import PromotionsContainer from "./components/PromotionsContainer"
 
 function App() {
   const [categories, setCategories] = useState([])
-  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState("Appeteasers")
 
   const updateCategories = () => {
     setCategories(restaurantData.categories)
