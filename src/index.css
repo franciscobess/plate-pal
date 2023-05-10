@@ -97,12 +97,20 @@
   font-size: 1.7vh;
 }
 
-.cousine-flag {
-  margin-left: 5px;
-  width: 3vh;
+.add-cart {
+  font-size: 3vh;
+  color: #fff;
   position: absolute;
+  padding: 0.5vh;
   right: 5px;
   bottom: 0;
+  background-color: #2bbbad;
+  text-align: center;
+}
+
+.add-cart:hover {
+  background-color: #2bbbad71;
+  cursor: pointer;
 }
 
 .plate-price {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import DefaultMealImg from '../assets/default-meal.png'
-import IndianFlag from '../assets/indian-flag.png'
+import { TbShoppingCartPlus } from "react-icons/tb";
 import PropTypes from 'prop-types';
 import _ from "lodash"
 
@@ -27,7 +27,10 @@ const PlateCard = ({ product }) => {
                 <h1 className='plate-title'>{product.name}</h1>
                 <p className='plate-description'>{product.description}</p>
                 <p className='plate-price'>${minPlatePrice} {maxPlatePrice > minPlatePrice && <> - ${maxPlatePrice}</>}</p>
-                <img src={IndianFlag} alt="flag xxxx" className='cousine-flag' />
+                <div className='add-cart'>
+                    <TbShoppingCartPlus />
+                </div>
+                {/* <img src={IndianFlag} alt="flag xxxx" className='cousine-flag' /> */}
             </div>
         </div>
     )
