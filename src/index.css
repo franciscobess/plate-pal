@@ -99,16 +99,19 @@
 
 .add-cart {
   font-size: 3vh;
+  height: 4vh;
   color: #fff;
   position: absolute;
   padding: 0.5vh;
-  right: 5px;
+  right: 0.5vh;
   bottom: 0;
   background-color: #2bbbad;
   text-align: center;
+  transition: height .2s ease-out 100ms;
 }
 
 .add-cart:hover {
+  height: 5vh;
   background-color: #2bbbad71;
   cursor: pointer;
 }
