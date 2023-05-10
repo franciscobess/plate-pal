@@ -6,13 +6,14 @@ import { RestaurantContext } from "./context/RestaurantContext"
 const PlatesContainer = () => {
     const { categories, selectedCategory } = useContext(RestaurantContext)
 
-    const currentCategory = _.filter(categories, (category) => category.name === selectedCategory)
+    const currentCategory = _.filter(categories, (category) => category.name === selectedCategory)[0]
+
 
     if (!_.isEmpty(currentCategory)) {
         return (
             <div className="plates-container">
-                {currentCategory[0]["menu-items"].map((product) => (
-                    <PlateCard key={product.id} product={product}/>
+                {currentCategory["menu-items"].map((product) => (
+                    <PlateCard key={product.id} product={product} />
                 ))}
             </div>
         )
