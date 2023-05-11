@@ -125,7 +125,8 @@
   margin-top: 3vh;
   padding: 1vh 1vh 0 1vh;
   width: 25%;
-  border: 1px solid #e7e7e7;
+  border-left: 1px solid #e7e7e7;
+  border-top: 1px solid #e7e7e7;
 }
 
 .cart-top-container {
@@ -147,4 +148,15 @@
 .cart-icon {
   position: absolute;
   right: 1vh;
+}
+
+.cart-item-card {
+  margin-top: 1vh;
+  padding: .5vh .5vh .5vh .5vh;
+  background-color: #e7e7e7;
+  border-radius: 3px;
+}
+
+.cart-item-name {
+  font-size: 1.5vh;
 }

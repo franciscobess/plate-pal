@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import DefaultMealImg from '../assets/default-meal.png'
 import { TbShoppingCartPlus } from "react-icons/tb";
 import PropTypes from 'prop-types';
 import _ from "lodash"
+import { RestaurantContext } from './context/RestaurantContext';
 
 const PlateCard = ({ product }) => {
     const [minPlatePrice, setMinPlatePrice] = useState(product["sub-items"][0].price)
     const [maxPlatePrice, setMaxPlatePrice] = useState(product["sub-items"][0].price)
+    const { myCart, setMyCart } = useContext(RestaurantContext)
+
+    const addCurrentPlateToCart = () => {
+        setMyCart(myCart.concat(product))
+    }
 
     _.forEach(product["sub-items"], (item) => {
         if (item.price < minPlatePrice) {
@@ -27,7 +33,7 @@ const PlateCard = ({ product }) => {
                 <h1 className='plate-title'>{product.name}</h1>
                 <p className='plate-description'>{product.description}</p>
                 <p className='plate-price'>${minPlatePrice} {maxPlatePrice > minPlatePrice && <> - ${maxPlatePrice}</>}</p>
-                <div className='add-cart'>
+                <div className='add-cart' onClick={addCurrentPlateToCart}>
                     <TbShoppingCartPlus />
                 </div>
             </div>

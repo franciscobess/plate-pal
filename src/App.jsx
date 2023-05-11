@@ -9,6 +9,7 @@ import Cart from "./components/Cart"
 function App() {
   const [categories, setCategories] = useState([])
   const [selectedCategory, setSelectedCategory] = useState("Appeteasers")
+  const [myCart, setMyCart] = useState([])
 
   const updateCategories = () => {
     setCategories(restaurantData.categories)
@@ -18,6 +19,8 @@ function App() {
     categories,
     selectedCategory,
     setSelectedCategory,
+    myCart,
+    setMyCart,
   }
 
   if (categories && _.isEmpty(categories)) {
