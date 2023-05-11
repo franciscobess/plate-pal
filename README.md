@@ -2,9 +2,9 @@
 
 Online restaurant app
 
-# Current status
+# Current project status
 
-![Current status](./readme_content/Screenshot_1.png)
+![Current project status](./readme_content/current-project-status.png)
 
 <h4 align="center"> 
 	🚧 This app still is a work in progress... 🚧

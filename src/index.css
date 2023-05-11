@@ -91,12 +91,6 @@
   font-size: 1.4vh;
 }
 
-.plate-cousine {
-  display: flex;
-  align-items: center;
-  font-size: 1.7vh;
-}
-
 .add-cart {
   font-size: 3vh;
   height: 4vh;
@@ -123,9 +117,34 @@
   bottom: 0;
 }
 
-/* Deals container */
+/* Cart container */
 
-.deals-container {
+.cart-container {
+  height: fit-content;
+  min-height: 25vh;
+  margin-top: 3vh;
+  padding: 1vh 1vh 0 1vh;
   width: 25%;
-  background-color: #edad19;
+  border: 1px solid #e7e7e7;
+}
+
+.cart-top-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: #2bbbad;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.cart-title {
+  margin: 0;
+  font-size: 3vh;
+  font-weight: 300;
+  margin-left: 1vh;
+}
+
+.cart-icon {
+  position: absolute;
+  right: 1vh;
 }

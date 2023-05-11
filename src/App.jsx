@@ -4,7 +4,7 @@ import { useState } from "react"
 import restaurantData from "../restaurant-data.json"
 import _ from "lodash"
 import PlatesContainer from "./components/PlatesContainer"
-import PromotionsContainer from "./components/PromotionsContainer"
+import Cart from "./components/Cart"
 
 function App() {
   const [categories, setCategories] = useState([])
@@ -29,7 +29,7 @@ function App() {
       <Navbar />
       <div className="all-plates-container">
         <PlatesContainer />
-        <PromotionsContainer />
+        <Cart />
       </div>
     </RestaurantContext.Provider>
   )
