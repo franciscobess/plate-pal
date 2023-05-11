@@ -68,6 +68,7 @@
   border-bottom: none;
   margin-left: 10px;
   position: relative;
+  margin-bottom: 2vh;
 }
 
 .plate-image {
@@ -150,6 +151,11 @@
   right: 1vh;
 }
 
+.cart-midle-container {
+  max-height: 210px;
+  overflow-y: scroll;
+}
+
 .cart-item-card {
   margin-top: 1vh;
   padding: .5vh .5vh .5vh .5vh;
@@ -159,4 +165,24 @@
 
 .cart-item-name {
   font-size: 1.5vh;
+}
+
+.cart-bottom-container {
+  margin-top: 2vh;
+  display: flex;
+  position: relative;
+}
+
+.cart-price-title {
+  margin: 0;
+  font-size: 2.5vh;
+  font-weight: 300;
+}
+
+.cart-total-price {
+  margin: 0;
+  font-size: 2.5vh;
+  font-weight: 300;
+  position: absolute;
+  right: 1vh;
 }

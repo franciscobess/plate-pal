@@ -17,6 +17,10 @@ const Cart = () => {
                     <CartItem key={item.id} item={item}/>
                 ))}
             </div>
+            <div className="cart-bottom-container">
+                <h1 className="cart-price-title">Total price</h1>
+                <h1 className="cart-total-price">$250.00</h1>
+            </div>
         </div>
     )
 }
