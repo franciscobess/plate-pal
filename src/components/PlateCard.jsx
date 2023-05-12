@@ -14,6 +14,10 @@ const PlateCard = ({ product }) => {
         setMyCart(myCart.concat(product))
     }
 
+    // const thisPlateHasOptions = () => {
+    //     return product["sub-items"].length > 1
+    // }
+
     _.forEach(product["sub-items"], (item) => {
         if (item.price < minPlatePrice) {
             setMinPlatePrice(item.price)

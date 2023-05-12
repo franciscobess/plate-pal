@@ -5,10 +5,12 @@ import restaurantData from "../restaurant-data.json"
 import _ from "lodash"
 import PlatesContainer from "./components/PlatesContainer"
 import Cart from "./components/Cart"
+import OptionsModal from "./components/OptionsModal"
 
 function App() {
   const [categories, setCategories] = useState([])
   const [selectedCategory, setSelectedCategory] = useState("Appeteasers")
+  const [selectedPlate, setSelectedPlate] = useState(null)
   const [myCart, setMyCart] = useState([])
 
   const updateCategories = () => {
@@ -19,6 +21,8 @@ function App() {
     categories,
     selectedCategory,
     setSelectedCategory,
+    selectedPlate,
+    setSelectedPlate,
     myCart,
     setMyCart,
   }
@@ -34,6 +38,7 @@ function App() {
         <PlatesContainer />
         <Cart />
       </div>
+      <OptionsModal />
     </RestaurantContext.Provider>
   )
 }
