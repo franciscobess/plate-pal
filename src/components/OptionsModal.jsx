@@ -1,11 +1,19 @@
+import { useContext } from 'react';
 import DefaultMealImg from '../assets/default-meal.png'
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { RestaurantContext } from './context/RestaurantContext';
 
 const OptionsModal = () => {
+    const { setShowOptionsModal } = useContext(RestaurantContext)
+
+    const closeModal = () => {
+        setShowOptionsModal(false)
+    }
+
     return (
         <div className="options-modal-container">
             <div className="modal-content">
-                <AiOutlineCloseCircle className='close-icon' />
+                <AiOutlineCloseCircle className='close-icon' onClick={closeModal}/>
                 <h1 className="modal-title">3 Chicken Wings has those options</h1>
                 <div className="options-container">
                     <img src={DefaultMealImg} alt="" className='options-plate-image' />

@@ -8,15 +8,19 @@ import { RestaurantContext } from './context/RestaurantContext';
 const PlateCard = ({ product }) => {
     const [minPlatePrice, setMinPlatePrice] = useState(product["sub-items"][0].price)
     const [maxPlatePrice, setMaxPlatePrice] = useState(product["sub-items"][0].price)
-    const { myCart, setMyCart } = useContext(RestaurantContext)
+    const { myCart, setMyCart, setShowOptionsModal } = useContext(RestaurantContext)
 
     const addCurrentPlateToCart = () => {
         setMyCart(myCart.concat(product))
+        
+        if (thisPlateHasOptions()) {
+            setShowOptionsModal(true)
+        }
     }
 
-    // const thisPlateHasOptions = () => {
-    //     return product["sub-items"].length > 1
-    // }
+    const thisPlateHasOptions = () => {
+        return product["sub-items"].length > 1
+    }
 
     _.forEach(product["sub-items"], (item) => {
         if (item.price < minPlatePrice) {

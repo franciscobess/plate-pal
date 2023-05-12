@@ -12,6 +12,7 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("Appeteasers")
   const [selectedPlate, setSelectedPlate] = useState(null)
   const [myCart, setMyCart] = useState([])
+  const [showOptionsModal, setShowOptionsModal] = useState(false)
 
   const updateCategories = () => {
     setCategories(restaurantData.categories)
@@ -25,6 +26,8 @@ function App() {
     setSelectedPlate,
     myCart,
     setMyCart,
+    showOptionsModal,
+    setShowOptionsModal
   }
 
   if (categories && _.isEmpty(categories)) {
@@ -38,7 +41,7 @@ function App() {
         <PlatesContainer />
         <Cart />
       </div>
-      <OptionsModal />
+      {showOptionsModal && <OptionsModal />}
     </RestaurantContext.Provider>
   )
 }
