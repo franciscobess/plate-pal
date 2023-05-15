@@ -159,11 +159,27 @@
 .cart-item-card {
   margin-top: 1vh;
   padding: .5vh .5vh .5vh .5vh;
+  margin-right: 1vh;
   background-color: #e7e7e7;
+  display: flex;
+  align-items: center;
 }
 
 .cart-item-name {
   font-size: 1.5vh;
+}
+
+.cart-plate-image {
+  width: 4vh;
+}
+
+.cart-delete-item {
+  margin-left: auto;
+  color: rgb(186, 58, 58);
+}
+
+.cart-delete-item:hover {
+  cursor: pointer;
 }
 
 .cart-bottom-container {

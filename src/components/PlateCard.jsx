@@ -11,6 +11,7 @@ const PlateCard = ({ product }) => {
     const { myCart, setMyCart, setShowOptionsModal } = useContext(RestaurantContext)
 
     const addCurrentPlateToCart = () => {
+        product.line = myCart.length + 1
         setMyCart(myCart.concat(product))
         
         if (thisPlateHasOptions()) {
@@ -36,7 +37,7 @@ const PlateCard = ({ product }) => {
 
     return (
         <div className="plate-card">
-            <img src={product.images.length < 1 ? DefaultMealImg : product.images[0]} alt="plate xxxxx" className='plate-image' />
+            <img src={DefaultMealImg} alt="plate xxxxx" className='plate-image' />
             <div className='plate-info-container'>
                 <h1 className='plate-title'>{product.name}</h1>
                 <p className='plate-description'>{product.description}</p>
