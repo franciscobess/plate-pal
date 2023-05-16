@@ -246,6 +246,31 @@
   position: relative;
 }
 
+.cart-payment-container {
+  margin-top: 2vh;
+  width: 95%;
+  background-color: #cd5688;
+  padding: .5vh .5vh .5vh .5vh;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+}
+
+.cart-payment-text {
+  margin: 0;
+}
+
+.payment-arrow {
+  margin-left: auto;
+}
+
+.cart-payment-container:hover {
+  cursor: pointer;
+  background-color: #cd5688be;
+}
+
 .cart-price-title {
   margin: 0;
   font-size: 2.5vh;

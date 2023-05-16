@@ -3,6 +3,7 @@ import CartItem from "./CartItem";
 import { useContext } from "react";
 import { RestaurantContext } from "./context/RestaurantContext";
 import { BsCartX } from "react-icons/bs";
+import { RxDoubleArrowRight } from "react-icons/rx";
 
 const Cart = () => {
     const { myCart } = useContext(RestaurantContext)
@@ -22,6 +23,10 @@ const Cart = () => {
                 <div className="cart-bottom-container">
                     <h1 className="cart-price-title">Total price</h1>
                     <h1 className="cart-total-price">$250.00</h1>
+                </div>
+                <div className="cart-payment-container">
+                    <p className="cart-payment-text">Go to payment</p>
+                    <RxDoubleArrowRight className="payment-arrow"/>
                 </div>
             </> : <>
                 <div className="empty-cart">
