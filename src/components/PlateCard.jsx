@@ -8,9 +8,10 @@ import { RestaurantContext } from './context/RestaurantContext';
 const PlateCard = ({ product }) => {
     const [minPlatePrice, setMinPlatePrice] = useState(product["sub-items"][0].price)
     const [maxPlatePrice, setMaxPlatePrice] = useState(product["sub-items"][0].price)
-    const { myCart, setMyCart, setShowOptionsModal } = useContext(RestaurantContext)
+    const { myCart, setMyCart, setShowOptionsModal, setSelectedPlate } = useContext(RestaurantContext)
 
     const addCurrentPlateToCart = () => {
+        setSelectedPlate(product)
         product.line = myCart.length + 1
         setMyCart(myCart.concat(product))
 
