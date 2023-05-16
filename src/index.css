@@ -163,6 +163,7 @@
   background-color: #e7e7e7;
   display: flex;
   align-items: center;
+  height: 6vh;
 }
 
 .cart-item-name {
@@ -180,6 +181,45 @@
 
 .cart-delete-item:hover {
   cursor: pointer;
+}
+
+.cart-remove-plate-container {
+  margin-top: 1vh;
+  padding: .5vh .5vh .5vh .5vh;
+  margin-right: 1vh;
+  display: flex;
+  align-items: center;
+  font-size: 1.5vh;
+  background-color: rgba(186, 58, 58, 0.931);
+  color: #fff;
+  height: 6vh;
+}
+
+.confirm-remove-plate-container {
+  margin-left: auto;
+  display: flex;
+}
+
+.confirmation-button {
+  display: flex;
+  align-items: center;
+  font-size: 3vh;
+  border-radius: 5px;
+  padding: .3vh;
+}
+
+.confirmation-button:hover {
+  cursor: pointer;
+}
+
+.confirm-remove-plate {
+  margin-right: 1vh;
+  background-color: #3bb23b;
+}
+
+.deny-remove-plate {
+  font-size: 3vh;
+  background-color: #5167b7;
 }
 
 .cart-bottom-container {

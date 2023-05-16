@@ -13,7 +13,7 @@ const PlateCard = ({ product }) => {
     const addCurrentPlateToCart = () => {
         product.line = myCart.length + 1
         setMyCart(myCart.concat(product))
-        
+
         if (thisPlateHasOptions()) {
             setShowOptionsModal(true)
         }
