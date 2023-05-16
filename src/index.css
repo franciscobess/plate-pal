@@ -156,6 +156,24 @@
   overflow-y: scroll;
 }
 
+.empty-cart {
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-cart-title {
+  font-size: 4vh;
+  color: #c9c9c9;
+  margin: 0;
+}
+
+.empty-cart-icon {
+  font-size: 10vh;
+  color: #c9c9c9;
+}
+
 .cart-item-card {
   margin-top: 1vh;
   padding: .5vh .5vh .5vh .5vh;
