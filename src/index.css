@@ -322,8 +322,9 @@
 .modal-title {
   margin-top: 4vh;
   text-align: center;
-  font-size: 2.5vh;
+  font-size: 2.2vh;
   font-weight: 300;
+  padding: 0 1vh;
 }
 
 .options-container {
@@ -361,7 +362,7 @@
   background-color: #2bbbad;
 }
 
-.choose-button {
+.choose-button-enabled {
   background-color: #2bbbad;
   text-align: center;
   margin: 0 auto;
@@ -370,7 +371,16 @@
   border-radius: 5px;
 }
 
-.choose-button:hover {
+.choose-button-enabled:hover {
   cursor: pointer;
   background-color: #2bbbad71;
+}
+
+.choose-button-disabled {
+  background-color: #4e585726;
+  text-align: center;
+  margin: 0 auto;
+  width: 15vh;
+  color: white;
+  border-radius: 5px;
 }

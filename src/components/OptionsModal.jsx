@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import DefaultMealImg from '../assets/default-meal.png'
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { RestaurantContext } from './context/RestaurantContext';
@@ -7,31 +7,39 @@ import Option from './Option';
 const OptionsModal = () => {
     const { setShowOptionsModal, selectedPlate, setSelectedPlate } = useContext(RestaurantContext)
 
+    const [selectedOption, setSelectedOption] = useState("")
+
     const closeModal = () => {
         setSelectedPlate({})
         setShowOptionsModal(false)
     }
 
-    const selectThisOption = () => {
-
+    const state = {
+        selectedOption,
+        setSelectedOption
     }
 
-    console.log(selectedPlate)
+    let optionAlreadySelected = selectedOption !== ""
 
     return (
         <div className="options-modal-container">
             <div className="modal-content">
                 <AiOutlineCloseCircle className='close-icon' onClick={closeModal} />
-                <h1 className="modal-title">3 Chicken Wings has those options</h1>
+                <h1 className="modal-title">{selectedPlate.name} has those options</h1>
                 <div className="options-container">
                     <img src={DefaultMealImg} alt="" className='options-plate-image' />
                     {selectedPlate["sub-items"].map((item) => (
-                        <Option key={item.id} optionData={item} />
+                        <Option key={item.id} optionData={item} state={state} />
                     ))}
                 </div>
-                <div className='choose-button'>
-                    <p>Choose</p>
-                </div>
+                {optionAlreadySelected ?
+                    <div className='choose-button-enabled'>
+                        <p>Choose</p>
+                    </div>
+                    :
+                    <div className='choose-button-disabled'>
+                        <p>Choose</p>
+                    </div>}
             </div>
         </div>
     )
