@@ -12,11 +12,12 @@ const PlateCard = ({ product }) => {
 
     const addCurrentPlateToCart = () => {
         setSelectedPlate(product)
-        product.line = myCart.length + 1
-        setMyCart(myCart.concat(product))
 
         if (thisPlateHasOptions()) {
             setShowOptionsModal(true)
+        } else {
+            product.line = myCart.length + 1
+            setMyCart(myCart.concat(product))
         }
     }
 
