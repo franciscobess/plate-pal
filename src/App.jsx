@@ -13,6 +13,7 @@ function App() {
   const [selectedPlate, setSelectedPlate] = useState(null)
   const [myCart, setMyCart] = useState([])
   const [showOptionsModal, setShowOptionsModal] = useState(false)
+  const [saleValue, setSaleValue] = useState(0)
 
   const updateCategories = () => {
     setCategories(restaurantData.categories)
@@ -27,12 +28,16 @@ function App() {
     myCart,
     setMyCart,
     showOptionsModal,
-    setShowOptionsModal
+    setShowOptionsModal,
+    saleValue,
+    setSaleValue
   }
 
   if (categories && _.isEmpty(categories)) {
     updateCategories()
   }
+
+  console.log(selectedPlate)
 
   return (
     <RestaurantContext.Provider value={state}>

@@ -6,7 +6,7 @@ import { BsCartX } from "react-icons/bs";
 import { RxDoubleArrowRight } from "react-icons/rx";
 
 const Cart = () => {
-    const { myCart } = useContext(RestaurantContext)
+    const { myCart, saleValue } = useContext(RestaurantContext)
 
     return (
         <div className="cart-container">
@@ -22,7 +22,7 @@ const Cart = () => {
                 </div>
                 <div className="cart-bottom-container">
                     <h1 className="cart-price-title">Total price</h1>
-                    <h1 className="cart-total-price">$250.00</h1>
+                    <h1 className="cart-total-price">${saleValue}</h1>
                 </div>
                 <div className="cart-payment-container">
                     <p className="cart-payment-text">Go to payment</p>
