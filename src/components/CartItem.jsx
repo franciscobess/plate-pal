@@ -6,7 +6,7 @@ import { useContext, useState } from 'react';
 import _ from "lodash"
 
 const CartItem = ({ item }) => {
-  const { myCart, setMyCart } = useContext(RestaurantContext)
+  const { myCart, setMyCart, setSaleValue, saleValue } = useContext(RestaurantContext)
   const [triyngRemovePlate, setTriyngRemovePlate] = useState(false)
   const [removePlateConfirmation, setRemovePlateConfirmation] = useState(false)
 
@@ -22,6 +22,7 @@ const CartItem = ({ item }) => {
     filteredList.splice(indexToRemove, 1)
 
     setMyCart(filteredList)
+    setSaleValue(Number(saleValue) - Number(item["sub-items"][0].price))
   }
 
   const denyRemove = () => {
