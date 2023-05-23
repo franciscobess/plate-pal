@@ -10,8 +10,8 @@ const OptionsModal = () => {
     const [selectedOption, setSelectedOption] = useState({})
 
     const closeModal = () => {
-        setSelectedPlate({})
-        setSelectedOption({})
+        setSelectedPlate(null)
+        setSelectedOption(null)
         setShowOptionsModal(false)
     }
 
@@ -20,13 +20,15 @@ const OptionsModal = () => {
         setSelectedOption
     }
 
-    let optionAlreadySelected =  !_.isEmpty(selectedOption)
+    let optionAlreadySelected = !_.isEmpty(selectedOption)
 
     const addCurrentOptionToCart = () => {
-        selectedOption.line = myCart.length + 1
-        selectedOption.name = `${selectedPlate.name} (${selectedOption.name})`
-        setMyCart(myCart.concat(selectedOption))
-        setSaleValue(Number(saleValue) + Number(selectedOption.price))
+        let currentOption = _.cloneDeep(selectedOption)
+
+        currentOption.line = myCart.length + 1
+        currentOption.name = `${selectedPlate.name} (${selectedOption.name})`
+        setMyCart(myCart.concat(currentOption))
+        setSaleValue(Number(saleValue) + Number(currentOption.price))
         closeModal()
     }
 

@@ -10,7 +10,7 @@ const Option = ({ option, state }) => {
             state.setSelectedOption(option)
         } else {
             checkBoxRef.current.checked = false;
-            state.setSelectedOption({})
+            state.setSelectedOption(null)
         }
     }
 

@@ -35,8 +35,6 @@ const CartItem = ({ item }) => {
     setTriyngRemovePlate(false)
   }
 
-  console.log(item)
-
   return (
     <div>
       {!triyngRemovePlate && !removePlateConfirmation ?
