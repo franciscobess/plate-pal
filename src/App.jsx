@@ -37,8 +37,6 @@ function App() {
     updateCategories()
   }
 
-  console.log(selectedPlate)
-
   return (
     <RestaurantContext.Provider value={state}>
       <Navbar />

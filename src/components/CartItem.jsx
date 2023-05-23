@@ -22,13 +22,20 @@ const CartItem = ({ item }) => {
     filteredList.splice(indexToRemove, 1)
 
     setMyCart(filteredList)
-    setSaleValue(Number(saleValue) - Number(item["sub-items"][0].price))
+
+    if (item["sub-items"] && item["sub-items"].length > 0) {
+      setSaleValue(Number(saleValue) - Number(item["sub-items"][0].price))
+    } else {
+      setSaleValue(Number(saleValue) - Number(item.price))
+    }
   }
 
   const denyRemove = () => {
     setRemovePlateConfirmation(false)
     setTriyngRemovePlate(false)
   }
+
+  console.log(item)
 
   return (
     <div>

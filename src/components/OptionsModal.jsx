@@ -3,14 +3,15 @@ import DefaultMealImg from '../assets/default-meal.png'
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { RestaurantContext } from './context/RestaurantContext';
 import Option from './Option';
+import _ from "lodash"
 
 const OptionsModal = () => {
-    const { setShowOptionsModal, selectedPlate, setSelectedPlate } = useContext(RestaurantContext)
-
-    const [selectedOption, setSelectedOption] = useState("")
+    const { myCart, setMyCart, selectedPlate, setSelectedPlate, saleValue, setSaleValue, setShowOptionsModal } = useContext(RestaurantContext)
+    const [selectedOption, setSelectedOption] = useState({})
 
     const closeModal = () => {
         setSelectedPlate({})
+        setSelectedOption({})
         setShowOptionsModal(false)
     }
 
@@ -19,7 +20,15 @@ const OptionsModal = () => {
         setSelectedOption
     }
 
-    let optionAlreadySelected = selectedOption !== ""
+    let optionAlreadySelected =  !_.isEmpty(selectedOption)
+
+    const addCurrentOptionToCart = () => {
+        selectedOption.line = myCart.length + 1
+        selectedOption.name = `${selectedPlate.name} (${selectedOption.name})`
+        setMyCart(myCart.concat(selectedOption))
+        setSaleValue(Number(saleValue) + Number(selectedOption.price))
+        closeModal()
+    }
 
     return (
         <div className="options-modal-container">
@@ -29,11 +38,11 @@ const OptionsModal = () => {
                 <div className="options-container">
                     <img src={DefaultMealImg} alt="" className='options-plate-image' />
                     {selectedPlate["sub-items"].map((item) => (
-                        <Option key={item.id} optionData={item} state={state} />
+                        <Option key={item.id} option={item} state={state} />
                     ))}
                 </div>
                 {optionAlreadySelected ?
-                    <div className='choose-button-enabled'>
+                    <div className='choose-button-enabled' onClick={addCurrentOptionToCart}>
                         <p>Choose</p>
                     </div>
                     :
