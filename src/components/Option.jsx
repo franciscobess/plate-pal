@@ -15,7 +15,7 @@ const Option = ({ optionData, state }) => {
 
     return (
         <div className='option-container'>
-            <h1 className='option-title' ref={optionTitleRef}>{optionData.name}</h1>
+            <h1 className={`option-title ${optionData.name.length > 7 && 'option-title-sm'}`} ref={optionTitleRef}>{optionData.name}</h1>
             <p className='option-price'>${optionData.price}</p>
             <input type="checkbox" name="" id="" className="checkbox-option" ref={checkBoxRef} onChange={checkThisOption}/>
         </div>

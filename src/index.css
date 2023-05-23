@@ -346,6 +346,12 @@
 .option-title {
   margin: 0 auto;
   font-size: 2vh;
+  height: 4vh;
+  text-align: center;
+}
+
+.option-title-sm {
+  font-size: 1.3vh;
 }
 
 .option-price {
