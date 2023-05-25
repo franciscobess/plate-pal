@@ -10,9 +10,11 @@ const PlatesContainer = () => {
 
 
     if (!_.isEmpty(currentCategory)) {
+        const items = currentCategory.name === "Dessert" ? currentCategory["menu-items"][0]["sub-items"] : currentCategory["menu-items"]
+
         return (
             <div className="plates-container">
-                {currentCategory["menu-items"].map((product) => (
+                {items.map((product) => (
                     <PlateCard key={product.id} product={product} />
                 ))}
             </div>

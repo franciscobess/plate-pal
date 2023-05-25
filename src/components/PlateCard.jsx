@@ -6,8 +6,12 @@ import _ from "lodash"
 import { RestaurantContext } from './context/RestaurantContext';
 
 const PlateCard = ({ product }) => {
-    const [minPlatePrice, setMinPlatePrice] = useState(product["sub-items"][0].price)
-    const [maxPlatePrice, setMaxPlatePrice] = useState(product["sub-items"][0].price)
+    const isThisProductDessert = () => {
+        return product["category_name"] === "Dessert"
+    }
+
+    const [minPlatePrice, setMinPlatePrice] = useState(isThisProductDessert() ? product.price : product["sub-items"][0].price)
+    const [maxPlatePrice, setMaxPlatePrice] = useState(isThisProductDessert() ? product.price : product["sub-items"][0].price)
     const { myCart, setMyCart, setShowOptionsModal, setSelectedPlate, saleValue, setSaleValue } = useContext(RestaurantContext)
 
     const addCurrentPlateToCart = () => {
@@ -18,12 +22,30 @@ const PlateCard = ({ product }) => {
         } else {
             product.line = myCart.length + 1
             setMyCart(myCart.concat(product))
-            setSaleValue(Number(saleValue) + Number(product["sub-items"][0].price))
+            setSaleValue(Number(saleValue) + Number(isThisProductDessert() ? product.price : product["sub-items"][0].price))
         }
     }
 
     const thisPlateHasOptions = () => {
+        if (isThisProductDessert()) {
+            return product.length > 1
+        }
+
         return product["sub-items"].length > 1
+    }
+
+    if (isThisProductDessert()) {
+        _.forEach(product, (item) => {
+            if (item.price < minPlatePrice) {
+                setMinPlatePrice(item.price)
+            }
+        })
+
+        _.forEach(product, (item) => {
+            if (item.price > maxPlatePrice) {
+                setMaxPlatePrice(item.price)
+            }
+        })
     }
 
     _.forEach(product["sub-items"], (item) => {
