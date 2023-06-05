@@ -40,7 +40,7 @@ const OptionsModal = () => {
                 <div className="options-container">
                     <img src={DefaultMealImg} alt="" className='options-plate-image' />
                     {selectedPlate["sub-items"].map((item) => (
-                        <Option key={item.id} option={item} state={state} />
+                        <Option key={item.id} option={item} state={state} currentSelectedOption={selectedOption}/>
                     ))}
                 </div>
                 {optionAlreadySelected ?

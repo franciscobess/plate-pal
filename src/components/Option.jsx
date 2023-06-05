@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useRef } from 'react';
 
-const Option = ({ option, state }) => {
+const Option = ({ option, state, currentSelectedOption }) => {
     const optionTitleRef = useRef()
     const checkBoxRef = useRef()
 
@@ -12,6 +12,10 @@ const Option = ({ option, state }) => {
             checkBoxRef.current.checked = false;
             state.setSelectedOption(null)
         }
+    }
+
+    if (currentSelectedOption.id !== option.id && checkBoxRef.current) {
+        checkBoxRef.current.checked = false
     }
 
     return (
@@ -26,6 +30,7 @@ const Option = ({ option, state }) => {
 Option.propTypes = {
     option: PropTypes.node.isRequired,
     state: PropTypes.node.isRequired,
+    currentSelectedOption: PropTypes.node.isRequired
 };
 
 export default Option
