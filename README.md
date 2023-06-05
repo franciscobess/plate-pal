@@ -1,11 +1,11 @@
 # PlatePal
 
-Online restaurant app
+Online restaurant app using React
 
 # Current project status
 
 ![Current project status](./readme_content/overview.gif)
 
 <h4 align="center"> 
-	🚧 This app still is a work in progress... 🚧
+	✅ Project finished ✅
 </h4>
