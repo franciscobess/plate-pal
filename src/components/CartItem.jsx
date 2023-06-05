@@ -39,9 +39,14 @@ const CartItem = ({ item }) => {
     <div>
       {!triyngRemovePlate && !removePlateConfirmation ?
         <div className="cart-item-card">
-          <img src={DefaultMealImg} alt="plate xxxxx" className='cart-plate-image' />
-          <p className="cart-item-name">{item.name}</p>
+        <img src={DefaultMealImg} alt="plate xxxxx" className='cart-plate-image' />
+          <div className='cart-item-main-info'>
+            <p className="cart-item-name">{item.name}</p>
+            <p className="cart-item-price">${item["sub-items"] && item["sub-items"].length > 0 ? item["sub-items"][0].price : item.price}</p>
+          </div>
+
           <AiOutlineMinus className='cart-delete-item' onClick={deleteItemFromCart} />
+
         </div> :
         <div className='cart-remove-plate-container'>
           <p>Sure u wanna remove this plate?</p>

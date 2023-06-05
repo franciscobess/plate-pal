@@ -184,8 +184,13 @@
   height: 6vh;
 }
 
+.cart-item-main-info {
+  margin-left: .5vh;
+}
+
 .cart-item-name {
   font-size: 1.5vh;
+  margin-bottom: 0;
 }
 
 .cart-plate-image {
@@ -199,6 +204,12 @@
 
 .cart-delete-item:hover {
   cursor: pointer;
+}
+
+.cart-item-price {
+  font-size: 1.3vh;
+  margin-top: 1vh;
+  color: #686868;
 }
 
 .cart-remove-plate-container {
